@@ -57,13 +57,14 @@ We hold these truths to be self-evident, that all men are created equal, that th
 #remove line breaks
 para = para.replace("\n", " ")
 #for num, sentence in enumerate(para.split(".")):
-#   print('Sentence number: ',num+1,"-",sentence)
-    
+#print('Sentence number: ',num+1,"-",sentence) 
 for num, sentence in enumerate(para.split(".")):
+    #exit if sentence is empty, that means end
+    if sentence ==" ":
+        break
     print("****************************")
     print('Sentence number: ',num+1,": ")
     for num, phrase in enumerate(sentence.split(",")):
         print('phrase number ', num+1,": ",phrase)
-        
     
     
