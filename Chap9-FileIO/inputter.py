@@ -26,7 +26,7 @@ Enter text:
 
 '''
 #create file to write user input to
-input_text = open('user_input.txt','a')
+input_text = open('C:\Users\jay wilner 3\workspace\oreillyPython1\Chap9-FileIO\user_input.txt','a')
 input_text.close()
 
 #use while loop to display/accept input from user
