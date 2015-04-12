@@ -15,6 +15,7 @@ Python is fun.
 Enter text: O'Reilly makes good classes.
 Python is fun.O'Reilly makes good classes.
 Enter text:
+
 Below is an example of possible output from a second run of the program.
 
 Python is fun.O'Reilly makes good classes.
@@ -30,14 +31,15 @@ input_text.close()
 
 #upon starting the program displays any previous content of the file 
 user_input = open('user_input.txt','r').readlines()
-    if user_input:     
-        for line in user_input:
-            print(line)
-#capture user input           
+if user_input:     
+    for line in user_input:
+        print(line.strip())
+
+#now capture user input           
 while True:
     myText = input("Enter text: ")
-    if myText ==" ":
+    #check for carriage return
+    if "\r" in myText:
         break
-    f = open('user_input_text.txt','a')
-    f.
-    print myText
+    f = open('user_input.txt','a')
+    f.write(myText)
