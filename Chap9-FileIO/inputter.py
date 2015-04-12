@@ -25,21 +25,22 @@ Enter text:
 
 '''
 #create file to store user input
-#input_text = open('C:\Users\jay wilner 3\workspace\oreillyPython1\Chap9-FileIO\user_input.txt','a')
-input_text = open('user_input.txt','a')
+input_text = open('C:\\Users\\jay wilner 3\\workspace\\oreillyPython1\\Chap9-FileIO\\myuser_input.txt','a')
+#input_text = open('user_input.txt','a')
 input_text.close()
 
 #upon starting the program displays any previous content of the file 
-user_input = open('user_input.txt','r').readlines()
+user_input = open('C:\\Users\\jay wilner 3\\workspace\\oreillyPython1\\Chap9-FileIO\\myuser_input.txt','r').readlines()
 if user_input:     
     for line in user_input:
         print(line.strip())
 
 #now capture user input           
 while True:
-    myText = input("Enter text: ")
-    #check for carriage return
-    if "\r" in myText:
+    f = open('C:\\Users\\jay wilner 3\\workspace\\oreillyPython1\\Chap9-FileIO\\myuser_input.txt','a')
+    i = input("Enter text (or Enter to quit): ")
+    if not i:
         break
-    f = open('user_input.txt','a')
-    f.write(myText)
+    f.write(i + '\n')
+print('the program has exited and the file has been closed')
+f.close()
