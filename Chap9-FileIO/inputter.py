@@ -1,6 +1,4 @@
-__author__ = 'outofboundscommunications'
-#To change this template use Tools | Templates.
-#
+
 '''
 Objective 1:
 This project tests your ability to use file objects.
@@ -25,14 +23,21 @@ Python is fun.O'Reilly makes good classes.The file is saving correctly
 Enter text:
 
 '''
-#create file to write user input to
-input_text = open('C:\Users\jay wilner 3\workspace\oreillyPython1\Chap9-FileIO\user_input.txt','a')
+#create file to store user input
+#input_text = open('C:\Users\jay wilner 3\workspace\oreillyPython1\Chap9-FileIO\user_input.txt','a')
+input_text = open('user_input.txt','a')
 input_text.close()
 
-#use while loop to display/accept input from user
-while True:
-    user_input = open('user_input.txt','r').readlines()
+#upon starting the program displays any previous content of the file 
+user_input = open('user_input.txt','r').readlines()
     if user_input:     
         for line in user_input:
-            print(line.strip()) 
+            print(line)
+#capture user input           
+while True:
     myText = input("Enter text: ")
+    if myText ==" ":
+        break
+    f = open('user_input_text.txt','a')
+    f.
+    print myText
