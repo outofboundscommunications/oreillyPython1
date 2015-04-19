@@ -1,4 +1,1 @@
-hello
-hello1
-hello2
-hello3
+you should imagine a line of deeply buried code that needs to shout out to the console. Nothing interactive. As a Python script. f.read() or f.readlines() by themselves just move the pointer to the end, nothing else happens. Naming the output at leaves saves the results for later use, but hereit's the console that needs the benefit of file content.

@@ -41,6 +41,21 @@ while True:
     i = input("Enter text (or Enter to quit): ")
     if not i:
         break
-    f.write(i + '\n')
+    #append phrase to file
+    f.write(i)
+    f.write('\n')
+    f.close()
+    #open file again for reading/printing out last element
+    f = open('C:\\Users\\jay wilner 3\\workspace\\oreillyPython1\\Chap9-FileIO\\myuser_input.txt','r')
+    myTextString =""
+    #read contents of file into a list
+    myList = f.readlines()
+    #iterate thru the list to make a string to print out on one line
+    for item in myList:
+        #remove the line breaks in the item
+        myItem = item.strip()
+        myTextString += myItem
+    print(myTextString)
+    
 print('the program has exited and the file has been closed')
 f.close()
