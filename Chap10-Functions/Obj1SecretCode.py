@@ -21,12 +21,22 @@ uj!tj!tjiU
 i = input("input a phrase or sentence:")
 cipherPhrase =""
 for c in i:
-    #print('the character is:',c)
     newC = chr(ord(c)+1)
-    #print('the ciphered character is:',newC)
+    #concatenate each character into phrase
     cipherPhrase+=newC
+
+#now we need to reverse the ciphered phrase
+revIterator = reversed(cipherPhrase)
+
+#create rev phrase from revIterator
+revPhrase=""
+for c in revIterator:
+    revPhrase+=c
+
+#print them all out
 print('the input phrase was:', i)
-print('the ciphered phrase is:', cipherPhrase)
+print('the non reversed cipheredPhrase is:',cipherPhrase)
+print('the reversed cipheredPhrase is: ',revPhrase)
     
   
     
