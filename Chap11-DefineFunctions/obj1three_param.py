@@ -32,8 +32,7 @@ test
 def my_func(a,b='b was not entered', c='c was not entered'):
     """ all this does is print out the parameters
     """
-    #print(a,b,c)
-    #email_f = "Your email address was {email}".format
+    #print out arguments with line break between each
     print("{0}\n{1}\n{2}\n".format(a,b,c))
     
 
