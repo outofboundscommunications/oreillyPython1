@@ -18,8 +18,12 @@ Create a while loop that requests two inputs from the user: one of the above fun
 Use function dispatch to get the correct function based on the first input, and then apply that function 
 to the second input.
 
+Can you think of a way you could simplify the creation of the function dispatch table? 
+(Hint: you can use methods of the string type, str, directly as functions that take a single string argument.)
+
 
 """
+import sys
 
 def capitalize(text):
     """capitalize everything"""
@@ -53,16 +57,16 @@ if __name__ == "__main__":
     }
 
     options = switch.keys()
-    prompt = 'Pick an option from the list ({0}): '.format(', '.join(options)) 
-    myText = 'Give some text: '
+    promptOption = 'Pick an option from the list ({0}): '.format(', '.join(options)) 
+    promptText = 'Give some text: '
     while True:
-        #prompt for selection
-        inp = input(prompt)
-        #get the value for the input key
+        #prompt for option
+        inp = input(promptOption)
+        #prompt for text
+        textInp = input(promptText)
+        #get the value for the option key
         option = switch.get(inp, None)
         if option:
-            #prompt for text phrase
-            myText = input(myText)
-            option(myText)
+            option(textInp)
         else:
             print('Please select a valid option!') 
