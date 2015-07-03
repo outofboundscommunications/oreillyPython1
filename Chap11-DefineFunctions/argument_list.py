@@ -1,4 +1,11 @@
+"""
+demonstrates the use of multiple positional parameters when you don't know how many are going \
+to be called. so you use a special syntax: *name in the function definition
 
+When you prefix the positional parameter with the asterisk (*) character in the function definition, this tells the \
+interpreter to collect any unmatched positional arguments into a tuple and then bind the tuple to the name following \
+the asterisk in the called function's namespace. 
+"""
 def multiplier(*args):
     """ Multiply the arguments together and return the result.
         Return 0 if nothing is provided.
@@ -9,7 +16,7 @@ def multiplier(*args):
     for a in args[1:]:
         print('a is: ',a)
         product *= a
-    return product
+    return product,args
 
 print(multiplier())
 print(multiplier(1,2,3,4))
