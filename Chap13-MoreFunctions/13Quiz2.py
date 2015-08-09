@@ -1,36 +1,21 @@
 
-
-question1 = 'Can a positional argument provide a value for a keyword parameter?'
-question2 = 'Can a keyword argument provide a value for a positional parameter?'
-question3 = 'What happens when you call a function with too many positional arguments, and the function definition doesnt have a sequence-parameter?'
-
-
-def printQuestion(num,question):
-    print(60*'-')
-    print("Question#: %d \n" % num)
-    print("%s" % question)
-
-def printAnswer(num,answer):
-    print(60*'-')
-    print("Answer#: %d \n" % num)
-    print("%s" % answer)
-
 def myArguments(Arg1=1, Arg2=1):
-    """function with two keywor arguments a,b and"""
+    """function with two keyword arguments a,b and"""
     return(Arg1+Arg2)
 
 def test_me(a, b):
     """function with two positional arguments"""
-    print(a, b)
+    return(a+b)
 
 #make a call to the function to see if we can use positional arguments
 #for the keyword parameters
-#answer1 = myArguments(10,10)
+answer1 = myArguments(10,10)
 
 #make a call to the function to see if we can use keyword arguments
 #for the positional parameters
 #answer2 = test_me(a=10,b=10)
 
+<<<<<<< HEAD
 answer3 = myArguments(10,20,30,40,50,60)
 
 #printQuestion(1,question1)
@@ -41,6 +26,12 @@ answer3 = myArguments(10,20,30,40,50,60)
 
 printQuestion(3,question3)
 printAnswer(3,answer3)
+=======
+print('#1',answer1)
+
+print('#2',answer2)
+
+>>>>>>> chap13V2
 
 
 
