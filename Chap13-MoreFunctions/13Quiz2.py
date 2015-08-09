@@ -29,18 +29,18 @@ def test_me(a, b):
 
 #make a call to the function to see if we can use keyword arguments
 #for the positional parameters
-answer2 = test_me(a=10,b=10)
+#answer2 = test_me(a=10,b=10)
 
-#answer3 = myArguments(10,20,30,40,50,60)
+answer3 = myArguments(10,20,30,40,50,60)
 
 #printQuestion(1,question1)
 #printAnswer(1,answer1)
 
-printQuestion(2,question2)
-printAnswer(2,answer2)
+#printQuestion(2,question2)
+#printAnswer(2,answer2)
 
-#printQuestion(3,question3)
-#printAnswer(3,answer3)
+printQuestion(3,question3)
+printAnswer(3,answer3)
 
 
 
