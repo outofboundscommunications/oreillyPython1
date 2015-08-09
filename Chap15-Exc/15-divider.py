@@ -28,10 +28,7 @@ Your input must not be zero (0)
 Provide an integer:
 
 """
-def div(numInt):
-    return 10/numInt
-    raise
-    
+
 while True:
     intString = input("Provide an integer (or Enter to quit): ")
     #if user hits 'enter' then exit program/quit
@@ -42,7 +39,7 @@ while True:
         #convert input to integer
         numInt = int(intString)
         #do the calculation
-        print(div(numInt))
+        print(10/numInt)
     except ValueError:
         print("Your input must be an integer")
     except ZeroDivisionError:
