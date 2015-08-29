@@ -18,20 +18,14 @@ def book_title(title):
         #e.g. you don't need to check if preposition or not. doesnt matter.
         if i==0:
             new_title += word.title()+" "
-            #replace the existing word in the list with the new title case changed word
-            #lst_of_words[i] = new_title
         #check and see if the word is in the list of 'small words' or prepositions
         else:
             #if word is preposition then skip.
             if word in small_words:
                 new_title +=word+" "
-                #replace the existing word in the list with the new title case changed word
-                #lst_of_words[i] = new_title
             #word is not a preposition so go ahead and make first letter title case.
             else:
                 new_title += word.title()+" "
-                #replace the existing word in the list with the new title case changed word
-                #lst_of_words[i] = new_title
     #concatenate the new, correctly cased word to the new_title trunk
     return new_title 
 for title in lst_of_titles:
