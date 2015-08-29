@@ -62,7 +62,6 @@ def _test():
 
 if __name__ == "__main__":
     #_test()
-    title='Dive into Python'
-    print(book_title(title))
+
 
     
