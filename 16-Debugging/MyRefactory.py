@@ -52,8 +52,3 @@ def _test():
 if __name__ == "__main__":
     _test()
  
-
-'''
-for title in lst_of_titles:
-    print(book_title(title))
-'''
