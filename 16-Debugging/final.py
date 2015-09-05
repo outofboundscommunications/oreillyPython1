@@ -49,40 +49,40 @@ Created on Jan 1, 2015
 '''
 """Count the words, lines and characters in a chunk of text."""
 
-gettysburg = """\
-Four score and seven years ago our
-fathers brought forth on this continent,
-a new nation, conceived in Liberty, and
-dedicated to the proposition that
-all men are created equal.
-furniture store hinesville ga
-furniture stores in hinesville ga
-gibson furniture
-mattress hinesville ga
-a a b c d
+declaration = """When in the Course of human events it becomes necessary for one people to dissolve 
+the political bands which have connected them with another and to assume among the 
+powers of the earth, the separate and equal station to which the Laws of Nature and 
+of Nature's God entitle them, a decent respect to the opinions of mankind requires 
+that they should declare the causes which impel them to the separation."""
 
-"""
+#define list of punctuation characters that we will not count
+pList = ("'", ":", ",", "_", "...", "!", "-", "(", ")", ".", "?",'"')
 
+#initialize the list that counts frequency of word length
 lengthct = [0]*20 # a list of 20 zeroes
-print(lengthct)
 #counts characters in text
-charct = len(gettysburg)
-
-lines = gettysburg.split("\n")
+charct = len(declaration)
+print('the number of characters in the text is: ', charct)
+#split text into lines
+lines = declaration.split("\n")
 #counts lines in text
 linect = len(lines)
+print('the number of lines in the text is: ', linect)
 
 wordct = 0
 for line in lines:
     #split each line into words
+    print('processing the line: ', line)
     words = line.split()
-    #count the number of words in the line
-    wordct += len(words)
+    print('the words in the line are: ',words)
     for word in words:
         #increment the counter for the word of length, len(word), by 1
+        if len(word)==1:
+            print('the length of the word: ',word, 'is 1')
+            lengthct[len(word)] += 1
         lengthct[len(word)] += 1
 
-print("The text contains", linect, "lines,", wordct, "words, and", charct, "characters.")
+print("The text contains", linect, "lines,", " and", charct, "characters.")
 for i, ct in enumerate(lengthct):
     if ct:
         print("Length", i, ":", ct)
