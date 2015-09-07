@@ -1,6 +1,3 @@
-
-"""Count the words, lines and characters in a chunk of text."""
-
 declaration = """
 When in the Course of human events it becomes necessary for one people to dissolve 
 the political bands which have connected them with another and to assume among the 
