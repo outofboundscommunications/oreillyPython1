@@ -1,88 +1,197 @@
-__author__ = 'outofboundscommunications'
-#To change this template use Tools | Templates.
-'''
-#Objective 2:
-This project tests your basic ability to build a complex program from the relatively limited amounts of Python you already know.
 
-Create a new Python source file named final.py.
-Write a program that meets the following specifications:
-1. Call the program with an argument, it should treat the argument as a filename, and process the content of the file.
-2. The program reads all the input, splitting it up into words, and computes the length of each word. Punctuation marks should not 
-be included as a part of the word, so "it's" should be counted as a three-character word, and "final." should be counted as a 
-five-character word.
-3. The example text includes a "word" of zero length (the "&"); your solution should handle this.
-4. When all input has been processed, the program should print a table showing the word count for each of the word lengths 
-encountered. Your mentor will run your code against several standardized inputs to verify the correctness of your logic.
-
-
-Below is an example of output from running the program using the text in this file as input. (The text is the United States 
-Declaration of Independence). Copy the text in this file. Create a new file and paste the copied text into it, and save it 
-as declaration.txt in the same folder where your final.py program is located.
-
-Here is some sample output.
-
- Length Count
- 1 16
- 2 267
- 3 267
- 4 169
- 5 140
- 6 112
- 7 99
- 8 68
- 9 61
- 10 56
- 11 35
- 12 13
- 13 9
- 14 7
- 15 2
-Also, you will probably want to define a function to return the length of each word, since the built-in len() function will 
-include punctuation characters.
-
-'''
-
-'''
-Created on Jan 1, 2015
-
-@author: jay wilner 3
-'''
 """Count the words, lines and characters in a chunk of text."""
 
-declaration = """When in the Course of human events it becomes necessary for one people to dissolve 
+declaration = """
+When in the Course of human events it becomes necessary for one people to dissolve 
 the political bands which have connected them with another and to assume among the 
 powers of the earth, the separate and equal station to which the Laws of Nature and 
 of Nature's God entitle them, a decent respect to the opinions of mankind requires 
-that they should declare the causes which impel them to the separation."""
+that they should declare the causes which impel them to the separation.
+
+We hold these truths to be self-evident, that all men are created equal, that they 
+are endowed by their Creator with certain unalienable Rights, that among these are 
+Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments 
+are instituted among Men, deriving their just powers from the consent of the governed,
+That whenever any Form of Government becomes destructive of these ends, it is the 
+Right of the People to alter or to abolish it, and to institute new Government, 
+laying its foundation on such principles and organizing its powers in such form, as 
+to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, 
+will dictate that Governments long established should not be changed for light and 
+transient causes; and accordingly all experience hath shewn that mankind are more 
+disposed to suffer, while evils are sufferable than to right themselves by abolishing 
+the forms to which they are accustomed. But when a long train of abuses and usurpations, 
+pursuing invariably the same Object evinces a design to reduce them under absolute 
+Despotism, it is their right, it is their duty, to throw off such Government, and 
+to provide new Guards for their future security. Such has been the patient sufferance 
+of these Colonies; and such is now the necessity which constrains them to alter their 
+former Systems of Government. The history of the present King of Great Britain is a 
+history of repeated injuries and usurpations, all having in direct object the 
+establishment of an absolute Tyranny over these States. To prove this, let Facts be 
+submitted to a candid world.
+
+He has refused his Assent to Laws, the most wholesome and necessary for the public good.
+
+He has forbidden his Governors to pass Laws of immediate and pressing importance, 
+unless suspended in their operation till his Assent should be obtained; and when so 
+suspended, he has utterly neglected to attend to them.
+
+He has refused to pass other Laws for the accommodation of large districts of people, 
+unless those people would relinquish the right of Representation in the Legislature, 
+a right inestimable to them and formidable to tyrants only.
+
+He has called together legislative bodies at places unusual, uncomfortable, and distant 
+from the depository of their Public Records, for the sole purpose of fatiguing them 
+into compliance with his measures.
+
+He has dissolved Representative Houses repeatedly, for opposing with manly firmness 
+his invasions on the rights of the people.
+
+He has refused for a long time, after such dissolutions, to cause others to be elected, 
+whereby the Legislative Powers, incapable of Annihilation, have returned to the People 
+at large for their exercise; the State remaining in the mean time exposed to all the 
+dangers of invasion from without, and convulsions within.
+
+He has endeavoured to prevent the population of these States; for that purpose 
+obstructing the Laws for Naturalization of Foreigners; refusing to pass others to 
+encourage their migrations hither, and raising the conditions of new Appropriations 
+of Lands.
+
+He has obstructed the Administration of Justice by refusing his Assent to Laws for 
+establishing Judiciary Powers.
+
+He has made Judges dependent on his Will alone for the tenure of their offices, and 
+the amount and payment of their salaries.
+
+He has erected a multitude of New Offices, and sent hither swarms of Officers to 
+harass our people and eat out their substance.
+
+He has kept among us, in times of peace, Standing Armies without the Consent of 
+our legislatures.
+
+He has affected to render the Military independent of and superior to the Civil Power.
+
+He has combined with others to subject us to a jurisdiction foreign to our constitution, 
+and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:
+
+For quartering large bodies of armed troops among us:
+
+For protecting them, by a mock Trial from punishment for any Murders which they should 
+commit on the Inhabitants of these States:
+
+For cutting off our Trade with all parts of the world:
+
+For imposing Taxes on us without our Consent:
+
+For depriving us in many cases, of the benefit of Trial by Jury:
+
+For transporting us beyond Seas to be tried for pretended offences:
+
+For abolishing the free System of English Laws in a neighbouring Province, establishing 
+therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an 
+example and fit instrument for introducing the same absolute rule into these Colonies
+
+For taking away our Charters, abolishing our most valuable Laws and altering fundamentally 
+the Forms of our Governments:
+
+For suspending our own Legislatures, and declaring themselves invested with power to 
+legislate for us in all cases whatsoever.
+
+He has abdicated Government here, by declaring us out of his Protection and waging War 
+against us.
+
+He has plundered our seas, ravaged our coasts, burnt our towns, and destroyed the lives 
+of our people.
+
+He is at this time transporting large Armies of foreign Mercenaries to compleat the 
+works of death, desolation, and tyranny, already begun with circumstances of Cruelty 
+& Perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head 
+of a civilized nation.
+
+He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against 
+their Country, to become the executioners of their friends and Brethren, or to fall
+themselves by their Hands.
+
+He has excited domestic insurrections amongst us, and has endeavoured to bring on the 
+inhabitants of our frontiers, the merciless Indian Savages whose known rule of warfare, 
+is an undistinguished destruction of all ages, sexes and conditions.
+
+In every stage of these Oppressions We have Petitioned for Redress in the most humble 
+terms: Our repeated Petitions have been answered only by repeated injury. A Prince, 
+whose character is thus marked by every act which may define a Tyrant, is unfit to be the 
+ruler of a free people.
+
+Nor have We been wanting in attentions to our British brethren. We have warned them from 
+time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us.
+We have reminded them of the circumstances of our emigration and settlement here. We have 
+appealed to their native justice and magnanimity, and we have conjured them by the ties of our 
+common kindred to disavow these usurpations, which would inevitably interrupt our connections
+and correspondence. They too have been deaf to the voice of justice and of consanguinity.
+We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them,
+as we hold the rest of mankind, Enemies in War, in Peace Friends.
+
+We, therefore, the Representatives of the united States of America, in General Congress, 
+Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, 
+do, in the Name, and by Authority of the good People of these Colonies, solemnly publish 
+and declare, That these united Colonies are, and of Right ought to be Free and Independent 
+States, that they are Absolved from all Allegiance to the British Crown, and that all 
+political connection between them and the State of Great Britain, is and ought to be 
+totally dissolved; and that as Free and Independent States, they have full Power to 
+levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other 
+Acts and Things which Independent States may of right do. And for the support of this 
+Declaration, with a firm reliance on the protection of Divine Providence, we mutually 
+pledge to each other our Lives, our Fortunes, and our sacred Honor.
+
+"""
 
 #define list of punctuation characters that we will not count
-pList = ("'", ":", ",", "_", "...", "!", "-", "(", ")", ".", "?",'"')
+pList = ("'", ":", ",", "_", "...", "!", "-", "(", ")", ".", "?",'"',"&")
+
+#define empty dictionary
+word_dict = {}
+
+#function that creates a one to many dictionary of word length and words of that length
+def wordDict(word):
+    for word in words:
+        #figure out length of word without punctuation
+        wordLength = lenCounter(word)
+        word_dict.setdefault(wordLength, []).append(word)
+        
+#function that counts length of a word but skips punctuation
+def lenCounter(word):
+    wordLength =0
+    for c in word:
+        if c not in pList:
+            wordLength+=1  
+    return wordLength
 
 #initialize the list that counts frequency of word length
 lengthct = [0]*20 # a list of 20 zeroes
+
 #counts characters in text
 charct = len(declaration)
-print('the number of characters in the text is: ', charct)
+
 #split text into lines
 lines = declaration.split("\n")
+
 #counts lines in text
 linect = len(lines)
-print('the number of lines in the text is: ', linect)
 
-wordct = 0
+#wordct = 0
+
 for line in lines:
-    #split each line into words
-    print('processing the line: ', line)
+    #split the line into words
     words = line.split()
-    print('the words in the line are: ',words)
     for word in words:
-        #increment the counter for the word of length, len(word), by 1
-        if len(word)==1:
-            print('the length of the word: ',word, 'is 1')
-            lengthct[len(word)] += 1
-        lengthct[len(word)] += 1
+        #increment the counter for the word of length, lenCounter(word), by 1
+        lengthct[lenCounter(word)] += 1
+        #store length of word and then append to dictionary
+        wordLength = lenCounter(word)
+        word_dict.setdefault(wordLength, []).append(word)
 
 print("The text contains", linect, "lines,", " and", charct, "characters.")
 for i, ct in enumerate(lengthct):
     if ct:
-        print("Length", i, ":", ct)
+        print("Length", i, ":", ct)     
+
+for key,val in word_dict.items():
+    print(key, val)
