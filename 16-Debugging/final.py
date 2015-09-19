@@ -1,3 +1,5 @@
+import sys
+
 #define list of punctuation characters that we will not count
 pList = ("'", ":", ",", "_", "...", "!", "-", "(", ")", ".", "?",'"',"&")
 
@@ -8,7 +10,7 @@ word_dict = {}
 lengthct = [0]*20 # a list of 20 zeroes
 
 #open the text file to read
-f = open('declaration.txt', 'r')
+f = open(sys.argv[1] , 'r')
 text = f.read()
 #split string into words
 words = text.split()
@@ -41,8 +43,4 @@ for word in words:
 for i, ct in enumerate(lengthct):
     if ct:
         print("Length", i, ":", ct)     
-"""
-for key,val in word_dict.items():
-    print(key, val)
 
-"""
