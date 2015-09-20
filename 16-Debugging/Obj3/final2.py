@@ -1,0 +1,56 @@
+'''
+Objective 3:
+This project builds on the previous one.
+Copy your final.py file to a file named final2.py, then modify final2.py to print a histogram of the word lengths. 
+A histogram is a chart with columns whose heights correspond to the data they represent.
+
+
+
+'''
+import sys
+
+#define list of punctuation characters that we will not count
+pList = ("'", ":", ",", "_", "...", "!", "-", "(", ")", ".", "?",'"',"&")
+
+#define empty dictionary
+word_dict = {}
+
+#initialize the list that counts frequency of word length
+lengthct = [0]*20 # a list of 20 zeroes
+
+#open the text file to read
+f = open(sys.argv[1] , 'r')
+text = f.read()
+#split string into words
+words = text.split()
+
+#function that creates a one to many dictionary of word length and words of that length
+def wordDict(word):
+    for word in words:
+        #figure out length of word without punctuation
+        wordLength = lenCounter(word)
+        word_dict.setdefault(wordLength, []).append(word)
+        
+#function that counts length of a word but skips punctuation
+def lenCounter(word):
+    wordLength =0
+    for c in word:
+        if c not in pList:
+            wordLength+=1  
+    return wordLength
+
+#process the words
+for word in words:
+    #call function to calculate word length
+    #don't count words of zero length (e.g. '&')
+    if lenCounter(word)>0:
+        #increment the counter for the word of that length
+        lengthct[lenCounter(word)] += 1
+    #append length of word and word value as key,value pairs in dictionary
+    wordLength = lenCounter(word)
+    word_dict.setdefault(wordLength, []).append(word)
+
+for i, ct in enumerate(lengthct):
+    if ct:
+        print("Length", i, ":", ct)     
+
