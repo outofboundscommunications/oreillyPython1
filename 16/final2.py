@@ -1,3 +1,6 @@
+'''
+this is the final objective #3 in chapter 16
+'''
 import sys
 
 from string import punctuation as punc 

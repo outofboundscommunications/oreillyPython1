@@ -1,3 +1,32 @@
+'''
+Excellent.
+
+Another solution:
+
+import sys, string
+
+f = open(sys.argv[1], 'r')
+
+database = {}
+for line in f:
+    for punc in string.punctuation:
+        line = line.replace(punc, '')
+    line_list = line.split()
+    for word in line_list:
+        database[len(word)] = database.get(len(word), 0) + 1
+
+print("Length Count")
+for length in sorted(database):
+    print(length, database[length])
+
+f.close()
+
+
+-Kirby
+
+
+'''
+
 import sys
 
 from string import punctuation as punc 
