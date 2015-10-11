@@ -109,29 +109,17 @@ yMin = min(freq.values())
 yMax = max(freq.values())
 
 myStepY = round(yMax/10)
-#myStepX = round((xMax - xMin)/10)
 
-print('the dictionary is: ', freq)
-
-for y in range(yMax,-10,-myStepY):
-    myString=""
-    for x in range(0,xMax):
-        #add y axis labeling
-        if x == 0:
-            if x%y==0:
-                myString= str(y) + '-- |'
-            else:   
-                myString='|'    
-        elif x in freq:
-            theCount = freq.get(x,0)
-            if theCount >= y:
-                #print('i have a hit')
-                myString +="***"
-            else:
-                myString +="  "    
+for y in range(144,0,-10):  # stepping down from yMax to 0 by -10 increments
+    print ("{:>6} | ".format(y), end="") # suppress newline after label
+    for x in range(1,10):   # needs wider range for longer word lengths
+        if freq.get(x,0) >= y:  # if word count > or equal to y value...
+            column = "***"
         else:
-            myString +="  "
-    print(myString)
+            column = "   "
+        print(column, end="") # again suppress newline
+    print() # next row
+print("       --------------------------------------")
 
 
             
