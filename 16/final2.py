@@ -99,7 +99,7 @@ print("{0:<15s} {1:<10s}".format('word length:', 'frequency:'))
 #print out dictionary in table format 
 for wordLength in sorted((freq.keys())):
     print("{0:<15d} {1:<25d}".format(wordLength,freq[wordLength]))
-
+print(freq)
 xMin = min(freq)
 xMax = max(freq)
 
@@ -109,29 +109,17 @@ yMin = min(freq.values())
 yMax = max(freq.values())
 
 myStepY = round(yMax/10)
-#myStepX = round((xMax - xMin)/10)
 
-print('the dictionary is: ', freq)
-
-for y in range(yMax,-10,-myStepY):
-    myString=""
+def buildRow(y):
+    myRowList = []
     for x in range(0,xMax):
-        #add y axis labeling
-        if x == 0:
-            if x%y==0:
-                myString= str(y) + '-- |'
-            else:   
-                myString='|'    
-        elif x in freq:
-            theCount = freq.get(x,0)
-            if theCount >= y:
-                #print('i have a hit')
-                myString +="***"
-            else:
-                myString +="  "    
+        theCount = freq.get(x,0)
+        print(theCount)
+        if theCount >= y:
+            myRowList.append('***')
         else:
-            myString +="  "
-    print(myString)
-
-
-            
+            myRowList.append('   ') 
+    print(myRowList)
+    
+for y in range(yMax,-10,-myStepY):
+    buildRow(y)
