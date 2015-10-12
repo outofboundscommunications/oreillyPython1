@@ -125,7 +125,4 @@ for y in range(yMax,0,-10):  # stepping down from yMax to 0 by -10 increments
             column = "   "
         print(column, end="") # again suppress newline
     print() # next row
-print("       --------------------------------------")
-
-
-            
+print("       --------------------------------------")          
