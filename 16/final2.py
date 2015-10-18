@@ -122,14 +122,27 @@ yMax = max(freq.values())
 
 print("--------------------------------------") 
 myStepY = round(yMax/10)
+myStepX = round(xMax/10)
 
 for y in range(yMax,0,-myStepY):  # stepping down from yMax to 0 by -myStepY increments
     print ("{:>6} | ".format(y), end="") # suppress newline after label
-    for x in range(1,xMax+1):   # iterate through the x values from 1 to xMax
+    for x in range(1,xMax):   # iterate through the x values from 1 to xMax
         if freq.get(x,0) >= y:  # if word count > or equal to y value...
             column = "***"
         else:
             column = "   "
         print(column, end="") # again suppress newline
     print() # next row
-print("       --------------------------------------")          
+
+#create x axis
+print("{0:>8}".format('|'), end="")
+
+for x in range(1,xMax):
+    print("{0:>3}".format('--+'), end="")
+print()
+
+print("{0:>8}".format('0'), end="")
+for x in range(1,xMax+1,2):
+    print("{0:>2} |".format(x), end="")
+print()
+
